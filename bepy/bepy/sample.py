@@ -66,6 +66,8 @@ class Sample:
             direc = Path(path+folder)
             if os.path.isfile(direc / 'shofit.csv'):
                 parameters = pd.read_csv(direc / 'parameters.csv', header=None, index_col=0)
+                measType = None
+                measName = None
                 try:
                     measType = parameters.T['Measurement Type'].values[0]
                 except KeyError:
